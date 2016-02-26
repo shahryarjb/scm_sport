@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>mod_scmsport</name>
+    <author>John Doe</author>
+    <version>1.0.0</version>
+    <description>A simple Hello, World! module.</description>
+    <files>
+        <filename>mod_scmsport.xml</filename>
+        <filename module="mod_scmsport">mod_scmsport.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/css/reset.css</filename>
+        <filename>tmpl/css/style.css</filename>
+        <filename>tmpl/js/index.js</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+<fields name="params">
+            <fieldset name="basic">
+                
+                <field name="Iran-live-table" type="checkbox" label="بازی های زنده لیگ ایران" description="TABLE_DESC" value="1"/>
+                <field name="Iran-league_table" type="checkbox" label=" جدول لیگ ایران" description="TABLE_DESC" value="1"/>
+                <field name="England-live-table" type="checkbox" label="بازی های زنده لیگ انگلیس" description="TABLE_DESC" value="1"/>
+                <field name="England-league_table" type="checkbox" label="جدول لیگ انگلیس" description="TABLE_DESC" value="1"/>
+               <field name="tartib1" type="text" default="بازی های زنده لیگ ایران" label="ترتیب جداول را بنویسید" description="TABLE_DESC" size="15" />
+               <field name="tartib2" type="text" default="" label="" description="TABLE_DESC" size="15" />
+               <field name="tartib3" type="text" default="" label="" description="TABLE_DESC" size="15" />
+               <field name="tartib4" type="text" default="" label="" description="TABLE_DESC" size="15" />
+
+                </fieldset>
+                </fields>
+    </config>
+</extension>
