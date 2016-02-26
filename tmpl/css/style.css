@@ -93,3 +93,15 @@ td,th {
     font-family: tahoma;
     font-weight: normal;
   }
+  .tdmsh th {
+    text-align: right;
+  }
+
+ tbody > tr > th.w20.result.lt-hl-score-A.lt-hl-score-B {
+  text-align: center !important;
+ }
+ tbody > tr > th.w40.right-team.lt-hl-team-A,
+tbody > tr > th.w40.left-team.lt-hl-team-B,
+  .w40.left-team.lt-hl-team-B th {
+    text-align: right !important;
+  }

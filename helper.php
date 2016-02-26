@@ -1,6 +1,6 @@
 <?php
 /**
- * Helper class for Hello World! module
+ * https://trangell.com mina fathi
  * 
  * @package    Joomla.Tutorials
  * @subpackage Modules
@@ -26,7 +26,6 @@ class ModScMsPoRt
     
 }
 }
-
 /////////////////////iran///////////////////////////////////////////////////////////////////////
 $a = "http://football.ir/leagues/persian-gulf-league/";
 $per = file_get_contents($a);
@@ -35,23 +34,17 @@ $Iran = $params->get('Iran-live-table');
 function Iranlive($Iran,$per){
 
 if($Iran == 1){
-
 echo "<div id='titree-sps'>بازی های زنده لیگ ایران : <br><br><br></div>";
 preg_match_all('/<th class="w30 date lt-status-label">(.*?)<\/th>/si', $per, $n1);
 $z = count($n1[0]);
-
-
 $i = 1;
-echo "<table bordered='0' dir='rtl' cellpadding='10px'>";
+echo "<table bordered='0' dir='rtl' cellpadding='10px' class='tdmsh'>";
         echo "<tbody>"; 
         echo "<tr>" . "<td>تاریخ</td>" . "<td>ساعت</td>" . "<td>تیم 1</td>" . "<td>نتیجه</td>" . "<td>تیم 2</td>";  echo "</tr>";
         echo "</tbody>";        
         echo "</table>";
 while($i <$z){
-   
 //season-matches-11517  match-container
- 
-
 
   preg_match_all('/<th class="w30 date lt-status-label">(.*?)<\/th>/si', $per, $n1);
   preg_match_all('/<th class="w30 time match-minute lt-live-minute">(.*?)<\/th>/si', $per, $n2);
@@ -59,28 +52,19 @@ while($i <$z){
   preg_match_all('/<th class="w20 result lt-hl-score-A lt-hl-score-B">(.*?)<\/th>/si', $per, $n4);
   $n4[0][$i] = preg_replace("/<a(.*?)>/i", " ", $n4[0][$i]);
   preg_match_all('/<th class="w40 left-team lt-hl-team-B">(.*?)<\/th>/si', $per, $n6);
-   
-         
-        
-    
-        echo '<table border="3px" cellpadding="10px" >';
+
+        echo '<table border="3px" cellpadding="10px" class="tdmsh">';
         echo '<tbody>';
         echo '<tr>';
-
         echo $n1[0][$i];
         echo $n2[0][$i];
         echo $n3[0][$i];
         echo $n4[0][$i];
         echo $n6[0][$i];
-
         echo '</tr>';
         echo '</tbody>';
         echo '</table>';
-
-          
             $i++;
-      
-
 }
 }
 }
@@ -92,7 +76,7 @@ if($LIran == 1){
 
 echo "</br><div id='titree-sps'>جدول لیگ ایران: <br><br><br></div>";
 $i = 0;
-        echo "<table bordered='0' dir='rtl' cellpadding='10px'>";
+        echo "<table bordered='0' dir='rtl' cellpadding='10px' class='tdmsh'>";
         echo "<tbody>"; 
         echo "<tr>" . "<td>تیم</td>" . "<td>بازی</td>" . "<td>تفاضل</td>" . "<td>امتیاز</td>";  echo "</tr>";
         echo "</tbody>";        
@@ -106,17 +90,13 @@ while ($i <= 10) {
   echo '<table border="3px" cellpadding="10px" >';
         echo '<tbody>';
         echo '<tr>';
-
         echo $n1[0][$i];
         echo $n2[0][$i];
         echo $n3[0][$i];
         echo $n4[0][$i];
-
         echo '</tr>';
         echo '</tbody>';
         echo '</table>';
-
-  
   $i++;
   
 }
@@ -125,10 +105,7 @@ while ($i <= 10) {
 /////////////////////////////engelis//////////////////////////////////////////////
 echo '<br><br><br>';
 $b = "http://football.ir/leagues/english-premier-league/";
-
 $eng = file_get_contents($b);
-
-
 ////////////jadvale nateye zende bazihaye engelis//////////////////////////////////
 $England = $params->get('England-live-table');
 function Englandlive($England,$eng){
@@ -137,49 +114,33 @@ if($England == 1){
   echo "</br>";
 echo "<div id='titree-sps'>بازی های زنده لیگ انگلیس : <br><br><br></div>";
 preg_match_all('/<th class="w30 date lt-status-label">(.*?)<\/th>/si', $eng, $n1);
-
-
-
 $x = count($n1[0]);
-
 $i = 0;
-        echo "<table bordered='0' dir='rtl' cellpadding='10px'>";
+        echo "<table bordered='0' dir='rtl' cellpadding='10px' class='tdmsh'>";
         echo "<tbody>"; 
         echo "<tr>" . "<td>تاریخ</td>" . "<td>ساعت</td>" . "<td>تیم 1</td>" . "<td>نتیجه</td>" . "<td>تیم 2</td>";  echo "</tr>";
         echo "</tbody>";        
         echo "</table>";
 while($i <$x){
-   
 //season-matches-11517  match-container
- 
-
-
   preg_match_all('/<th class="w30 date lt-status-label">(.*?)<\/th>/si', $eng, $n1);
   preg_match_all('/<th class="w30 time match-minute lt-live-minute">(.*?)<\/th>/si', $eng, $n2);
   preg_match_all('/<th class="w40 right-team lt-hl-team-A">(.*?)<\/th>/si', $eng, $n3);
   preg_match_all('/<th class="w20 result lt-hl-score-A lt-hl-score-B">(.*?)<\/th>/si', $eng, $n4);
   $n4[0][$i] = preg_replace("/<a(.*?)>/i", " ", $n4[0][$i]);
   preg_match_all('/<th class="w40 left-team lt-hl-team-B">(.*?)<\/th>/si', $eng, $n6);
-   
-         
-        
-    
         echo '<table border="3px" cellpadding="10px" >';
         echo '<tbody>';
         echo '<tr>';
-
         echo $n1[0][$i];
         echo $n2[0][$i];
         echo $n3[0][$i];
         echo $n4[0][$i];
         echo $n6[0][$i];
-
         echo '</tr>';
         echo '</tbody>';
-        echo '</table>';
-          
-            $i++;
-       
+        echo '</table>';  
+            $i++; 
 }
 }
 }
@@ -190,7 +151,7 @@ function Englandleague($LEngland,$eng){
 if($LEngland == 1){
 echo "</br><div id='titree-sps'>جدول لیگ انگلیس: <br><br><br>";
 $i = 0;
-        echo "<table bordered='0' dir='rtl' cellpadding='10px'>";
+        echo "<table bordered='0' dir='rtl' cellpadding='10px' class='tdmsh'>";
         echo "<tbody>"; 
         echo "<tr>" . "<td>تیم</td>" . "<td>بازی</td>" . "<td>تفاضل</td>" . "<td>امتیاز</td>";  echo "</tr>";
         echo "</tbody>";        
@@ -204,12 +165,10 @@ while ($i <= 10) {
   echo '<table border="10px" cellpadding="10px" >';
         echo '<tbody>';
         echo '<tr>';
-
         echo $n1[0][$i];
         echo $n2[0][$i];
         echo $n3[0][$i];
         echo $n4[0][$i];
-
         echo '</tr>';
         echo '</tbody>';
         echo '</table>';
